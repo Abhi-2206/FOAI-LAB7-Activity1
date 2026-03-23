@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public API Playground</title>
+
+    <!-- Google Fonts: Syne & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-mesh"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-icon">🌐</span>
+                <span class="logo-text">API Playground</span>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="gradient-text">Public API Explorer</h1>
+        <p>Discover live data from 4 free endpoints</p>
+    </header>
+
+    <main class="grid-container">
+
+        <!-- Card 1: Dog Finder -->
+        <div class="card" style="animation-delay: 0ms;">
+            <div class="card-header">
+                <h2>🐶 Dog Finder</h2>
+            </div>
+            <div class="card-content" id="dog-content">
+                <div class="empty-state"><i>Click the button for a random dog!</i></div>
+            </div>
+            <div class="card-actions">
+                <button id="btn-dog" onclick="fetchDog()" class="btn-primary">Get Dog</button>
+            </div>
+        </div>
+
+        <!-- Card 2: Joke Generator -->
+        <div class="card" style="animation-delay: 100ms;">
+            <div class="card-header">
+                <h2>😂 Joke Generator <span class="badge" id="joke-counter" style="display:none;">Joke #0</span></h2>
+            </div>
+            <div class="card-content" id="joke-content">
+                <div class="empty-state"><i>Click the button to get a laugh!</i></div>
+            </div>
+            <div class="card-actions">
+                <button id="btn-joke" onclick="fetchJoke()" class="btn-primary">Get Joke</button>
+                <button id="btn-next-joke" onclick="fetchJoke()" class="btn-primary" style="display: none;">Next Joke
+                    ➡️</button>
+            </div>
+        </div>
+
+        <!-- Card 3: Random User -->
+        <div class="card" style="animation-delay: 200ms;">
+            <div class="card-header">
+                <h2>👤 Random User</h2>
+            </div>
+            <div class="card-content" id="user-content">
+                <div class="empty-state"><i>Generate a random human identity!</i></div>
+            </div>
+            <div class="card-actions">
+                <button id="btn-user" onclick="fetchUser()" class="btn-primary">Get User</button>
+            </div>
+        </div>
+
+        <!-- Card 4: JSONPlaceholder Post -->
+        <div class="card" style="animation-delay: 300ms;">
+            <div class="card-header">
+                <h2>📝 Sample Post</h2>
+            </div>
+            <div class="card-content" id="post-content">
+                <div class="empty-state"><i>Fetch a sample blog post.</i></div>
+            </div>
+            <div class="card-actions">
+                <button id="btn-post" onclick="fetchPost()" class="btn-primary">Get Post</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Built with HTML, CSS & JS • Public API Playground <span class="heart">❤️</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
